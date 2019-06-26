@@ -1,0 +1,20 @@
+plugins {
+    id 'groovy'
+}
+
+dependencies {
+    implementation localGroovy()
+    implementation project(':producer')
+}
+
+tasks.withType(GroovyCompile).all {
+    doFirst {
+        logger.quiet("task '${delegate.name}' classpath: {}", classpath.files)
+    }
+}
+
+tasks.withType(JavaCompile).all {
+    doFirst {
+        logger.quiet("task '${delegate.name}' classpath: {}", classpath.files)
+    }
+}

@@ -1,0 +1,11 @@
+plugins {
+// alongside `java` works!
+//    id 'java'
+// alongside 'java-library' broken!
+//    id 'java-library'
+    id 'groovy'
+}
+
+dependencies {
+    implementation localGroovy()
+}
